@@ -3,9 +3,6 @@ title: API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -19,27 +16,36 @@ search: true
 
 # Introducción
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Bienvenido a Bantotal Developers! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Te brindamos endpoints tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. Identifica los que necesitas y comienza ahora.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Autenticación
 
-# Authentication
+La autenticación es la llave que te permitirá trabajar con nuestra API. 
+<aside class="notice">
+Cómo estamos en una versión beta, comunicate con nosotros para recibir una llave y ser uno de los primeros developers en probar la API.
+</aside>
+
+Todos los recursos de nuestra plataforma son privados. Esto quiere decir que por ejemplo, si deseas que tu aplicación acceda a los datos de un cliente, el cliente deberá darle permisos.
+Para autenticar utilizamos el conocido protocolo [oAuth 2.0](https://oauth.net/2/).
+
+El protocolo se divide en **dos grandes partes**:
+
+1. Obtener un access token para un cliente(mediante la aprobación del cliente).
+2. Accesso a los recursos mediante el access token.
+
+Antes de comenzar a detallar cada una de las partes, es **importante** mencionar que una vez que tu aplicación este registrada en B[DEV], tendra asignado un *client_id* y un *client_secret*.
+
+`client_id: blablabla`
+
+`client_secret: shhhhhhhh`
+
+## Obtener el access token
+
+## Acceso a los recursos
 
 > To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -47,15 +53,7 @@ curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
 > Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
