@@ -125,18 +125,6 @@
 
 <h1 id="autenticaci-n">Autenticación</h1>
 
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
 <p>La autenticación es la llave que te permitirá trabajar con nuestra API. 
 <aside class="notice">
 Cómo estamos en una versión beta, comunicate con nosotros para recibir una llave y ser uno de los primeros developers en probar la API.
@@ -151,6 +139,18 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <li>Obtener un access token para un cliente(mediante la aprobación del cliente)</li>
 <li>Accesso a los recursos mediante el access token</li>
 </ol>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+</blockquote>
 
 <p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
