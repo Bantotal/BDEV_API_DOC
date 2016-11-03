@@ -262,9 +262,8 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>¡Listo! Como verás en la respuesta obtendrás el access_token para realizar llamadas a nuestra API y así obtener acceso a los datos privados del cliente.</p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
-
-<h1 id="el-access_token-obtenido-en-el-paso-anterior-se-pasa-en-authorization-bearer-access_token">El access_token obtenido en el paso anterior, se pasa en Authorization: Bearer access_token</h1>
-<pre class="highlight shell"><code>curl -X GET 
+<pre class="highlight shell"><code><span class="c"># El access_token obtenido en el paso anterior, se pasa en Authorization: Bearer access_token</span>
+curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
   <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
