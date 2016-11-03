@@ -263,25 +263,37 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<h1 id="el-access_token-obtenido-en-el-paso-anterior-se-pasa-en-authorization-bearer-access_token">El access_token obtenido en el paso anterior, se pasa en Authorization: Bearer access_token</h1>
+<pre class="highlight shell"><code>curl -X GET 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
+  <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+<p>El GET te retornará la siguiente estructura JSON:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd862b916439c226657"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"094500500"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av. Italia 456"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mvarela@btd.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Varela"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Martín"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47039264"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd662b916439c226653"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cedula de Identidad"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd662b916439c226654"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Uruguay"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Ahora que ya tienes el <code class="prettyprint">access_token</code>, podrás acceder a los recursos.</p>
 
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+<p>Veamos un ejemplo.</p>
 
 <h1 id="kittens">Kittens</h1>
 
