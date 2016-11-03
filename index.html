@@ -235,6 +235,30 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p>Como verás en el comando, uno de los parametros pasados en el Header es Authorization. <strong>En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;</strong>. <a href="https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica">Aquí</a> puedes ver como generar el hash.</p>
 
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client</td>
+<td>Es el client_id de tu aplicación.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>El código de autorización obtenido en el paso anterior.</td>
+</tr>
+<tr>
+<td>redirect_uri</td>
+<td>URL – Es el URL de tu aplicación.</td>
+</tr>
+<tr>
+<td>grant_type</td>
+<td>authorization_code – Indica que la operación deseada es intercambiar el “code” por un access_token.</td>
+</tr>
+</tbody></table>
+
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
 <blockquote>
