@@ -148,6 +148,22 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <h2 id="obtener-el-access-token">Obtener el access token</h2>
 
+<p>El <em>access_token</em> o token de cliente es el tipo de token más común. Se necesita cada vez que la aplicación solicita a la API, que lea o modifique datos del Banco en nombre del cliente. Los tokens de acceso de cliente se obtienen mediante un cuadro de diálogo de inicio de sesión y requieren que el cliente conceda permiso a la aplicación.</p>
+
+<p>Aunque cada plataforma genera tokens de acceso mediante API distintas, todas siguen una estrategia básica para obtener un token de cliente:</p>
+
+<ol>
+<li>La aplicación solicita al cliente que se autentique en el banco, y le de permisos de acceso a sus datos.</li>
+<li>El cliente se autentica y le otorga los permisos a la aplicación.</li>
+<li>La aplicación recibe el <em>access_token</em>. </li>
+</ol>
+
+<h3 id="paso-1">Paso 1</h3>
+
+<p>En este paso, la aplicación que desarrolles, deberá redireccionar al login del Banco para que los usuarios puedan autenticarse y posteriormente autorizar tu aplicación. Simplemente debes efectuar un redireccionamiento al URL:</p>
+
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=abc123&amp;response_type=code&amp;redirect_uri=http://www.bantotal.com</code></p>
+
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
 <blockquote>
