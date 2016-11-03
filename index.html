@@ -262,7 +262,8 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>¡Listo! Como verás en la respuesta obtendrás el access_token para realizar llamadas a nuestra API y así obtener acceso a los datos privados del cliente.</p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
-<pre class="highlight shell"><code><span class="c"># El access_token obtenido en el paso anterior, se pasa en Authorization: Bearer access_token</span>
+<pre class="highlight shell"><code><span class="c"># El access_token obtenido en el paso anterior, </span>
+se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
   <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
@@ -278,7 +279,7 @@ curl -X GET
   </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mvarela@btd.com"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Varela"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Martín"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47039264"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"document"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48039165"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"documentType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd662b916439c226653"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cedula de Identidad"</span><span class="w">
@@ -293,6 +294,10 @@ curl -X GET
 <p>Ahora que ya tienes el <code class="prettyprint">access_token</code>, podrás acceder a los recursos.</p>
 
 <p>Veamos un ejemplo.</p>
+
+<aside class="notice">
+Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo. A partir de ahora, cada recurso que quieras consumir, será de la misma manera, enviandole el access_token del cliente.
+</aside>
 
 <h1 id="kittens">Kittens</h1>
 
