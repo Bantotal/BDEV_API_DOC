@@ -160,9 +160,13 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <h3 id="paso-1">Paso 1</h3>
 
-<p>En este paso, la aplicación que desarrolles, deberá redireccionar al login del Banco para que los usuarios puedan autenticarse y posteriormente autorizar tu aplicación. Simplemente debes efectuar un redireccionamiento al URL:</p>
+<p>En este paso, la aplicación que desarrolles, deberá <strong>redireccionar</strong> al login del Banco para que los usuarios puedan autenticarse y posteriormente autorizar tu aplicación. Simplemente debes efectuar un redireccionamiento al URL:</p>
 
-<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=abc123&amp;response_type=code&amp;redirect_uri=http://www.bantotal.com</code></p>
+<blockquote>
+<p>Remplaza client_id por tu client_id, y redirect_uri por la url de tu aplicación</p>
+</blockquote>
+
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com</code></p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
