@@ -205,25 +205,26 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">https://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE</code></p>
 
+<h3 id="paso-4">Paso 4</h3>
+
 <blockquote>
 <p>Aquí un ejemplo:</p>
 </blockquote>
 <pre class="highlight shell"><code>curl -X POST 
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
-  -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redirect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span> <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
+  -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redirect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
+  <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
 </code></pre>
 
 <blockquote>
 <p>El POST te retornará la siguiente estructura JSON:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOY62IOdRUZ0WlfC24oRJO2buLfxNP39UN7vvDFyLFlLSyGBKcoXKo8154e2iJTzM7rtam0KemZMrdtMoWDu0pDUNpyNrLHnFw3ZX6fssb00o094lu9eiKO6UOhPCZ1nen5pNjB8EAQ1BfY2LPrA4RnQqWZd4k1EddVODCKzW76AjBiULpWXCXrGkhxgfeVmnn5L5OPMHoIKBRT4Eq7klpRjcTOUAg7j7J5tiA9PjRP05UhIcJaYpCfh4nAJmXnV"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOY62IRjcTaYpCfh4nAJmXnV"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-
-<h3 id="paso-4">Paso 4</h3>
 
 <p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el <code class="prettyprint">access_token</code>.</p>
 
@@ -231,9 +232,7 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">https://www.auth.btdevelopers.com/oauth/token</code></p>
 
-<aside class="notice">
-Como verás en el comando, uno de los parametros pasados en el Header es Authorization. En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;. [Aquí](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica) puedes ver como generar el hash.
-</aside>
+<p>Como verás en el comando, uno de los parametros pasados en el Header es Authorization. En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;. <a href="https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica">Aquí</a> puedes ver como generar el hash.</p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
