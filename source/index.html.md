@@ -43,6 +43,30 @@ Antes de comenzar a detallar cada una de las partes, es **importante** mencionar
 
 ## Obtener el access token
 
+El *access_token* o token de cliente es el tipo de token más común. Se necesita cada vez que la aplicación solicita a la API, que lea o modifique datos del Banco en nombre del cliente. Los tokens de acceso de cliente se obtienen mediante un cuadro de diálogo de inicio de sesión y requieren que el cliente conceda permiso a la aplicación.
+
+Aunque cada plataforma genera tokens de acceso mediante API distintas, todas siguen una estrategia básica para obtener un token de cliente:
+
+1. La aplicación solicita al cliente que se autentique en el banco, y le de permisos de acceso a sus datos.
+2. El cliente se autentica y le otorga los permisos a la aplicación.
+3. La aplicación recibe el *access_token*. 
+
+### Paso 1
+
+En este paso, la aplicación que desarrolles, deberá **redireccionar** al login del Banco para que los usuarios puedan autenticarse y posteriormente autorizar tu aplicación. Simplemente debes efectuar un redireccionamiento al URL:
+
+> Remplaza client_id por tu client_id, y redirect_uri por la url de tu aplicación
+
+`https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&response_type=code&redirect_uri=https://www.youawesomeapp.com`
+
+### Parametros
+
+Parametro | Descripción
+--------- | -----------
+client_id | Es el client_id de tu aplicación.
+response_type | code – Indica que la operación deseada es obtener un código de autenticación que le permitirá a tu aplicación interactuar con el Banco
+redirect_uri | URL – Es el URL de tu aplicación
+
 ## Acceso a los recursos
 
 > To authorize, use this code:
