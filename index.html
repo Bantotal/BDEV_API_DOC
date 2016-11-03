@@ -155,7 +155,8 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <ol>
 <li>La aplicación solicita al cliente que se autentique en el banco, y le de permisos de acceso a sus datos.</li>
 <li>El cliente se autentica y le otorga los permisos a la aplicación.</li>
-<li>La aplicación recibe el <em>access_token</em>. </li>
+<li>La aplicación recibe el código de autorización.</li>
+<li>La aplicación intercambia el código de autorización por el <em>access_token</em>. </li>
 </ol>
 
 <h3 id="paso-1">Paso 1</h3>
@@ -163,10 +164,10 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>En este paso, la aplicación que desarrolles, deberá <strong>redireccionar</strong> al login del Banco para que los usuarios puedan autenticarse y posteriormente autorizar tu aplicación. Simplemente debes efectuar un redireccionamiento al URL:</p>
 
 <blockquote>
-<p>Remplaza client_id por tu client_id, y redirect_uri por la url de tu aplicación</p>
+<p>Remplaza <em>blablabla</em> por tu client_id, y <em>https://www.youawesomeapp.com</em> por la url de tu aplicación</p>
 </blockquote>
 
-<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com</code></p>
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
 <h3 id="parametros">Parametros</h3>
 
@@ -182,13 +183,44 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 </tr>
 <tr>
 <td>response_type</td>
-<td>code – Indica que la operación deseada es obtener un código de autenticación que le permitirá a tu aplicación interactuar con el Banco</td>
+<td>code – Indica que la operación deseada es obtener un código de autenticación que le permitirá a tu aplicación interactuar con el Banco.</td>
 </tr>
 <tr>
 <td>redirect_uri</td>
-<td>URL – Es el URL de tu aplicación</td>
+<td>URL – Es el URL de tu aplicación.</td>
 </tr>
 </tbody></table>
+
+<p>Una vez que redirecciones al cliente al URL, ya puedes dejar de preocuparte, nosotros nos encargamos de la autenticación :)</p>
+
+<h3 id="paso-2">Paso 2</h3>
+
+<p>Una vez que el cliente complete el proceso de autenticación en la pagina del Banco, será redireccionado a la página de autorización de tu aplicación. Allí se le presentarán todos los permisos solicitados junto a la descripción de tu aplicación.</p>
+
+<p>De esto tampoco debes preocuparte :D</p>
+
+<h3 id="paso-3">Paso 3</h3>
+
+<p>Otorgados los permisos, el cliente será redireccionado al Redirect URI (el que nos pasaste en el URL anterior) con el código de autorización, de la siguiente forma:</p>
+
+<p><code class="prettyprint">https://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE</code></p>
+
+<h3 id="paso-4">Paso 4</h3>
+
+<p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el àccess_token`.</p>
+
+<blockquote>
+<p>Aquí un ejemplo:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -X POST 
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
+  -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
+  -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redirect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span> <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
+</code></pre>
+
+<p>Para ello deberás realizar el siguiente POST:</p>
+
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/oauth/token</code></p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
