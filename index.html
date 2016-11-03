@@ -213,7 +213,8 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <pre class="highlight shell"><code>curl -X POST 
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
-  -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redirect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
+  -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redi
+  rect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
   <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
 </code></pre>
 
@@ -232,7 +233,7 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">https://www.auth.btdevelopers.com/oauth/token</code></p>
 
-<p>Como verás en el comando, uno de los parametros pasados en el Header es Authorization. En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;. <a href="https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica">Aquí</a> puedes ver como generar el hash.</p>
+<p>Como verás en el comando, uno de los parametros pasados en el Header es Authorization. <strong>En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;</strong>. <a href="https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica">Aquí</a> puedes ver como generar el hash.</p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 
