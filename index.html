@@ -205,10 +205,6 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">https://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE</code></p>
 
-<h3 id="paso-4">Paso 4</h3>
-
-<p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el àccess_token`.</p>
-
 <blockquote>
 <p>Aquí un ejemplo:</p>
 </blockquote>
@@ -226,6 +222,10 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
   </span><span class="nt">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+
+<h3 id="paso-4">Paso 4</h3>
+
+<p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el <code class="prettyprint">access_token</code>.</p>
 
 <p>Para ello deberás realizar el siguiente POST:</p>
 
