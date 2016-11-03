@@ -121,7 +121,9 @@
 
 <p>Bienvenido a Bantotal Developers! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
 
-<p>Te brindamos endpoints tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. Identifica los que necesitas y comienza ahora.</p>
+<p>Te brindamos recursos tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. </p>
+
+<p>Identifica los que necesitas y comienza ahora ;)</p>
 
 <h1 id="autenticaci-n">Autenticación</h1>
 
@@ -136,8 +138,8 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>El protocolo se divide en <strong>dos grandes partes</strong>:</p>
 
 <ol>
-<li>Obtener un access token para un cliente(mediante la aprobación del cliente).</li>
-<li>Accesso a los recursos mediante el access token.</li>
+<li>Obtener un <em>access_token</em> para un cliente(mediante la aprobación del cliente).</li>
+<li>Accesso a los recursos mediante el <em>access_token</em>.</li>
 </ol>
 
 <p>Antes de comenzar a detallar cada una de las partes, es <strong>importante</strong> mencionar que una vez que tu aplicación este registrada en B[DEV], tendra asignado un <em>client_id</em> y un <em>client_secret</em>.</p>
@@ -148,9 +150,9 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <h2 id="obtener-el-access-token">Obtener el access token</h2>
 
-<p>El <em>access_token</em> o token de cliente es el tipo de token más común. Se necesita cada vez que la aplicación solicita a la API, que lea o modifique datos del Banco en nombre del cliente. Los tokens de acceso de cliente se obtienen mediante un cuadro de diálogo de inicio de sesión y requieren que el cliente conceda permiso a la aplicación.</p>
+<p>El <em>access_token</em> o token de cliente es el tipo de token más común. Se necesita cada vez que la aplicación solicita a la API, que lea o modifique datos del Banco en nombre del cliente. Los <em>access_token</em> se obtienen mediante un cuadro de diálogo de inicio de sesión y requieren que el cliente conceda permiso a la aplicación.</p>
 
-<p>Aunque cada plataforma genera tokens de acceso mediante API distintas, todas siguen una estrategia básica para obtener un token de cliente:</p>
+<p>Aunque cada plataforma genera <em>access_token</em> mediante API distintas, todas siguen una estrategia básica para obtenerlo:</p>
 
 <ol>
 <li>La aplicación solicita al cliente que se autentique en el banco, y le de permisos de acceso a sus datos.</li>
@@ -259,7 +261,7 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 </tr>
 </tbody></table>
 
-<p>¡Listo! Como verás en la respuesta obtendrás el access_token para realizar llamadas a nuestra API y así obtener acceso a los datos privados del cliente.</p>
+<p>¡Listo! Como verás en la respuesta obtendrás el <em>access_token</em> para realizar llamadas a nuestra API, y así obtener acceso a los datos privados del cliente.</p>
 
 <h2 id="acceso-a-los-recursos">Acceso a los recursos</h2>
 <pre class="highlight shell"><code><span class="c"># El access_token obtenido en el paso anterior, </span>
@@ -296,7 +298,7 @@ curl -X GET
 <p>Veamos un ejemplo.</p>
 
 <aside class="notice">
-Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo. A partir de ahora, cada recurso que quieras consumir, será de la misma manera, enviandole el access_token del cliente.
+Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo. A partir de ahora, cada recurso que quieras consumir, será de la misma manera, enviandole el access_token del cliente en el Header.
 </aside>
 
 <h1 id="kittens">Kittens</h1>
