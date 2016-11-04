@@ -170,6 +170,10 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">http://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
+<aside class="error">
+Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https.
+</aside>
+
 <h3 id="parametros">Parametros</h3>
 
 <table><thead>
@@ -459,11 +463,29 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <p>Actualmente estamos en la versión 0.1.
 Estos son las features que tenemos en vista para la próxima versión (0.2):</p>
 
-<p>&mdash;&mdash;&mdash; |
-Diseño de la página de autenticación de cliente |
-Diseño de la página de autorización de cliente |
-Endpoint obtener movimientos |
-Endpoint transferencias entre cuentas |</p>
+<table><thead>
+<tr>
+<th>Feature</th>
+<th>Versión</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Diseño de la página de autenticación de cliente</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Diseño de la página de autorización de cliente</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Endpoint obtener movimientos</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Endpoint transferencias entre cuentas</td>
+<td>0.2</td>
+</tr>
+</tbody></table>
 
 <aside class="success">
 Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
