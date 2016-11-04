@@ -61,6 +61,10 @@ En este paso, la aplicación que desarrolles, deberá **redireccionar** al login
 
 `http://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&response_type=code&redirect_uri=https://www.youawesomeapp.com/`
 
+<aside class="error">
+Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https.
+</aside>
+
 ### Parametros
 
 Parametro | Descripción
@@ -308,11 +312,12 @@ description | Un nombre para la cuenta.
 Actualmente estamos en la versión 0.1.
 Estos son las features que tenemos en vista para la próxima versión (0.2):
 
---------- |
-Diseño de la página de autenticación de cliente |
-Diseño de la página de autorización de cliente |
-Endpoint obtener movimientos |
-Endpoint transferencias entre cuentas |
+Feature | Versión
+--------- | -----------
+Diseño de la página de autenticación de cliente | 0.2
+Diseño de la página de autorización de cliente | 0.2
+Endpoint obtener movimientos | 0.2
+Endpoint transferencias entre cuentas | 0.2
 
 <aside class="success">
 Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
