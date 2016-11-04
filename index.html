@@ -376,6 +376,42 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/accounts</code></p>
 
+<h2 id="obtener-una-cuenta">Obtener una cuenta</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
+  <span class="s2">"http://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;"</span>
+</code></pre>
+
+<blockquote>
+<p>El GET te retornará la siguiente estructura JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+ </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd862b916439c226659"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cuenta de ahorro"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6570"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+ </span><span class="nt">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Este endpoint retorna la información de una única cuenta, la cual es filtrada mediante la URL.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Identificador de la cuenta.</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
