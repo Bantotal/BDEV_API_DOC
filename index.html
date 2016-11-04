@@ -170,7 +170,7 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 
 <p><code class="prettyprint">http://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
-<aside class="error">
+<aside class="warning">
 Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https.
 </aside>
 
@@ -458,6 +458,40 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
+
+<p>La API utiliza los siguientes códigos:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Algúno de los parametros es incorrecto</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; El access_token es inválido</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; La URL que solicitaste no existe</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; Upps, tuvimos un error (también tenemos bugs).</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; Nuestro servidor esta temporalmente fuera de servicio.</td>
+</tr>
+</tbody></table>
+
 <h1 id="pr-ximos-pasos">Próximos pasos</h1>
 
 <p>Actualmente estamos en la versión 0.1.
@@ -494,40 +528,6 @@ Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
 <p><code class="prettyprint">Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que no te gusta? Esperamos tus comentarios.</code></p>
 
 <p>El Team de B[DEV] :)</p>
-
-          <h1 id="errors">Errors</h1>
-
-<aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
-
-<p>La API utiliza los siguientes códigos:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Descripción</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Algúno de los parametros es incorrecto</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; El access_token es inválido</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; La URL que solicitaste no existe</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; Upps, tuvimos un error (también tenemos bugs).</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; Nuestro servidor esta temporalmente fuera de servicio.</td>
-</tr>
-</tbody></table>
 
       </div>
       <div class="dark-box">
