@@ -305,7 +305,8 @@ description | Un nombre para la cuenta.
 
 # Próximos pasos
 
-Estos son las features que tenemos en vista para la próxima versión:
+Actualmente estamos en la versión 0.1.
+Estos son las features que tenemos en vista para la próxima versión (0.2):
 
 --------- |
 Diseño de la página de autenticación de cliente |
@@ -313,7 +314,7 @@ Diseño de la página de autorización de cliente |
 Endpoint obtener movimientos |
 Endpoint transferencias entre cuentas |
 
-<aside class="notice">
+<aside class="success">
 Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
 </aside>
 
