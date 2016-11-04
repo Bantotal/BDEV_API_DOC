@@ -412,6 +412,49 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
+<h2 id="crear-cuenta-de-ahorro">Crear cuenta de ahorro</h2>
+<pre class="highlight shell"><code>curl -X POST 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
+  -d <span class="s1">'currency=USD&amp;description=Chanchita'</span> 
+  <span class="s2">"http://www.api.btdevelopers.com/v0/savingAccount"</span>
+</code></pre>
+
+<blockquote>
+<p>El POST te retornará la siguiente estructura JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chanchita"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5818fcd862b916439c226657"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cd3b7caf8ac0e2d1747c3"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Este endpoint da de alta una cuenta de ahorro al cliente.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/savingAccount</code></p>
+
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>Moneda de la cuenta (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>).</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Un nombre para la cuenta.</td>
+</tr>
+</tbody></table>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
