@@ -110,8 +110,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li>#<Hashie::Mash <p>Versión actual de la API="v0.1</p>"></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -119,7 +118,7 @@
       <div class="content">
         <h1 id="introducci-n">Introducción</h1>
 
-<p>Bienvenido a Bantotal Developers! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
+<p>Bienvenido a <strong>Bantotal Developers</strong>! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
 
 <p>Te brindamos recursos tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. </p>
 
@@ -303,7 +302,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h1 id="clientes">Clientes</h1>
 
-<p>En esta sección, encontrarás todos los recursos asociados a los datos de los clientes. Por ejemplo, sus datos personales registrados en el banco o el alta de un nuevo cliente.</p>
+<p>En esta sección, encontrarás todos los recursos asociados a los datos de los clientes. Por ejemplo, sus datos personales registrados en el banco, o el alta de un nuevo cliente.</p>
 
 <h2 id="obtener-datos">Obtener datos</h2>
 <pre class="highlight shell"><code>curl -X GET 
@@ -457,59 +456,35 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
           <h1 id="errors">Errors</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>La API utiliza los siguientes códigos:</p>
 
 <table><thead>
 <tr>
 <th>Error Code</th>
-<th>Meaning</th>
+<th>Descripción</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request &ndash; Algúno de los parametros es incorrecto</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Unauthorized &ndash; El access_token es inválido</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+<td>Not Found &ndash; La URL que solicitaste no existe</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error &ndash; Upps, tuvimos un error (también tenemos bugs).</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+<td>Service Unavailable &ndash; Nuestro servidor esta temporalmente fuera de servicio.</td>
 </tr>
 </tbody></table>
 
