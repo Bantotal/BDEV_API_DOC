@@ -168,10 +168,10 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>Remplaza <em>blablabla</em> por tu client_id, y <em>https://www.youawesomeapp.com</em> por la url de tu aplicación</p>
 </blockquote>
 
-<p><code class="prettyprint">http://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
+<p><code class="prettyprint">http://www.auth.btdevelopers.com:8090/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
 <aside class="warning">
-Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https.
+Cómo veras, no utilizamos https. Optamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https. Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 </aside>
 
 <h3 id="parametros">Parametros</h3>
@@ -220,7 +220,7 @@ Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle 
   -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
   -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redi
   rect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
-  <span class="s2">"http://www.auth.btdevelopers.com/oauth/token"</span>
+  <span class="s2">"http://www.auth.btdevelopers.com:8090/oauth/token"</span>
 </code></pre>
 
 <blockquote>
@@ -236,7 +236,7 @@ Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle 
 
 <p>Para ello deberás realizar el siguiente POST:</p>
 
-<p><code class="prettyprint">http://www.auth.btdevelopers.com/oauth/token</code></p>
+<p><code class="prettyprint">http://www.auth.btdevelopers.com:8090/oauth/token</code></p>
 
 <p>Como verás en el comando, uno de los parametros pasados en el Header es Authorization. <strong>En este comando esperamos que nos pases tu client_id y tu client_secret &ldquo;hasheados&rdquo;</strong>. <a href="https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica">Aquí</a> puedes ver como generar el hash.</p>
 
@@ -271,7 +271,7 @@ Cómo veras, no utilizamos https. Obtamos por esta opción (http) para quitarle 
 se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com/v0/client"</span>
+  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -311,7 +311,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-datos">Obtener datos</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com/v0/client"</span>
+  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -340,7 +340,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/client</code></p>
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/client</code></p>
 
 <h1 id="cuentas">Cuentas</h1>
 
@@ -349,7 +349,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-cuentas">Obtener cuentas</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com/v0/accounts"</span>
+  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/accounts"</span>
 </code></pre>
 
 <blockquote>
@@ -377,12 +377,12 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/accounts</code></p>
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/accounts</code></p>
 
 <h2 id="obtener-una-cuenta">Obtener una cuenta</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;"</span>
+  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/accounts/&lt;ID&gt;"</span>
 </code></pre>
 
 <blockquote>
@@ -401,7 +401,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/accounts/&lt;ID&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -420,7 +420,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -d <span class="s1">'currency=USD&amp;description=Chanchita'</span> 
-  <span class="s2">"http://www.api.btdevelopers.com/v0/savingAccount"</span>
+  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/savingAccount"</span>
 </code></pre>
 
 <blockquote>
@@ -440,7 +440,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com/v0/savingAccount</code></p>
+<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/savingAccount</code></p>
 
 <table><thead>
 <tr>
@@ -517,6 +517,10 @@ Estos son las features que tenemos en vista para la próxima versión (0.2):</p>
 </tr>
 <tr>
 <td>Endpoint transferencias entre cuentas</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Quitar puertos de URL</td>
 <td>0.2</td>
 </tr>
 </tbody></table>
