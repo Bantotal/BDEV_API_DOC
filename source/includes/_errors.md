@@ -1,4 +1,4 @@
-# Errors
+# Errores
 
 <aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
 
@@ -29,6 +29,7 @@ Quitar puertos de URL | 0.2
 Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
 </aside>
 
-`Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que no te gusta? Esperamos tus comentarios.`
+`Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que 
+no te gusta? Esperamos tus comentarios.`
 
-El Team de B[DEV] :)
+El Team de B[Developers] :)

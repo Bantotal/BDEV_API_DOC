@@ -15,7 +15,7 @@ search: true
 
 # Introducción
 
-Bienvenido a **Bantotal Developers**! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.
+Bienvenido a ¡**Bantotal Developers**! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.
 
 Te brindamos recursos tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. 
 
@@ -24,23 +24,24 @@ Identifica los que necesitas y comienza ahora ;)
 # Autenticación
 
 La autenticación es la llave que te permitirá trabajar con nuestra API. 
-<aside class="notice">
-Cómo estamos en una versión beta, comunicate con nosotros para recibir una llave y ser uno de los primeros developers en probar la API.
-</aside>
 
 Todos los recursos de nuestra plataforma son privados. Esto quiere decir que por ejemplo, si deseas que tu aplicación acceda a los datos de un cliente, el cliente deberá darle permisos.
 Para autenticar utilizamos el conocido protocolo [oAuth 2.0](https://oauth.net/2/).
 
 El protocolo se divide en **dos grandes partes**:
 
-1. Obtener un *access_token* para un cliente(mediante la aprobación del cliente).
+1. Obtener un *access_token* para un cliente (mediante la aprobación del cliente).
 2. Accesso a los recursos mediante el *access_token*.
 
-Antes de comenzar a detallar cada una de las partes, es **importante** mencionar que una vez que tu aplicación este registrada en B[DEV], tendra asignado un *client_id* y un *client_secret*.
+Antes de comenzar a detallar cada una de las partes, es **importante** mencionar que una vez que tu aplicación este registrada en B[Developers], tendra asignado un *client_id* y un *client_secret*.
 
 `client_id: blablabla`
 
 `client_secret: shhhhhhhh`
+
+<aside class="notice">
+Cómo estamos en una versión beta, comunicate con nosotros para recibir un client_id y un client_secret. Se uno de los primeros developers en probar la API.
+</aside>
 
 ## Obtener el access token
 
@@ -62,7 +63,9 @@ En este paso, la aplicación que desarrolles, deberá **redireccionar** al login
 `http://www.auth.btdevelopers.com:8090/dialog/authorize?client_id=blablabla&response_type=code&redirect_uri=https://www.youawesomeapp.com/`
 
 <aside class="warning">
-Cómo veras, no utilizamos https. Optamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https. Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
+Cómo veras, no utilizamos https. Esto es porque este es un ambiente “arena” y es la versión beta.
+En la próxima versión, y en las versiones reales disponibles en los clientes, por supuesto que será https.
+Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 </aside>
 
 ### Parametros
@@ -108,7 +111,8 @@ curl -X POST
 }
 ```
 
-Solo resta el último paso. Aquí deberas intercambiar el `code` obtenido por el `access_token`.
+Solo resta el último paso. Aquí deberas intercambiar el `code` obtenido por el 
+`access_token`.
 
 Para ello deberás realizar el siguiente POST:
 
