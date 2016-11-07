@@ -118,7 +118,7 @@
       <div class="content">
         <h1 id="introducci-n">Introducción</h1>
 
-<p>Bienvenido a <strong>Bantotal Developers</strong>! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
+<p>Bienvenido a ¡<strong>Bantotal Developers</strong>! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
 
 <p>Te brindamos recursos tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. </p>
 
@@ -126,10 +126,7 @@
 
 <h1 id="autenticaci-n">Autenticación</h1>
 
-<p>La autenticación es la llave que te permitirá trabajar con nuestra API. 
-<aside class="notice">
-Cómo estamos en una versión beta, comunicate con nosotros para recibir una llave y ser uno de los primeros developers en probar la API.
-</aside></p>
+<p>La autenticación es la llave que te permitirá trabajar con nuestra API. </p>
 
 <p>Todos los recursos de nuestra plataforma son privados. Esto quiere decir que por ejemplo, si deseas que tu aplicación acceda a los datos de un cliente, el cliente deberá darle permisos.
 Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">oAuth 2.0</a>.</p>
@@ -137,15 +134,19 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p>El protocolo se divide en <strong>dos grandes partes</strong>:</p>
 
 <ol>
-<li>Obtener un <em>access_token</em> para un cliente(mediante la aprobación del cliente).</li>
+<li>Obtener un <em>access_token</em> para un cliente (mediante la aprobación del cliente).</li>
 <li>Accesso a los recursos mediante el <em>access_token</em>.</li>
 </ol>
 
-<p>Antes de comenzar a detallar cada una de las partes, es <strong>importante</strong> mencionar que una vez que tu aplicación este registrada en B[DEV], tendra asignado un <em>client_id</em> y un <em>client_secret</em>.</p>
+<p>Antes de comenzar a detallar cada una de las partes, es <strong>importante</strong> mencionar que una vez que tu aplicación este registrada en B[Developers], tendra asignado un <em>client_id</em> y un <em>client_secret</em>.</p>
 
 <p><code class="prettyprint">client_id: blablabla</code></p>
 
 <p><code class="prettyprint">client_secret: shhhhhhhh</code></p>
+
+<aside class="notice">
+Cómo estamos en una versión beta, comunicate con nosotros para recibir un client_id y un client_secret. Se uno de los primeros developers en probar la API.
+</aside>
 
 <h2 id="obtener-el-access-token">Obtener el access token</h2>
 
@@ -171,7 +172,9 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p><code class="prettyprint">http://www.auth.btdevelopers.com:8090/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
 <aside class="warning">
-Cómo veras, no utilizamos https. Optamos por esta opción (http) para quitarle complejidad. Estamos dandole prioridad a otros features que creemos más importantes. De todas maneras, en una próxima versión agregaremos https. Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
+Cómo veras, no utilizamos https. Esto es porque este es un ambiente “arena” y es la versión beta.
+En la próxima versión, y en las versiones reales disponibles en los clientes, por supuesto que será https.
+Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 </aside>
 
 <h3 id="parametros">Parametros</h3>
@@ -232,7 +235,8 @@ Cómo veras, no utilizamos https. Optamos por esta opción (http) para quitarle 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el <code class="prettyprint">access_token</code>.</p>
+<p>Solo resta el último paso. Aquí deberas intercambiar el <code class="prettyprint">code</code> obtenido por el 
+<code class="prettyprint">access_token</code>.</p>
 
 <p>Para ello deberás realizar el siguiente POST:</p>
 
@@ -458,7 +462,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
-          <h1 id="errors">Errors</h1>
+          <h1 id="errores">Errores</h1>
 
 <aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
 
@@ -529,9 +533,10 @@ Estos son las features que tenemos en vista para la próxima versión (0.2):</p>
 Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
 </aside>
 
-<p><code class="prettyprint">Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que no te gusta? Esperamos tus comentarios.</code></p>
+<p><code class="prettyprint">Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que 
+no te gusta? Esperamos tus comentarios.</code></p>
 
-<p>El Team de B[DEV] :)</p>
+<p>El Team de B[Developers] :)</p>
 
       </div>
       <div class="dark-box">
