@@ -118,7 +118,7 @@ Para ello deberás realizar el siguiente POST:
 
 `http://www.auth.btdevelopers.com:8090/oauth/token`
 
-Como verás en el comando, uno de los parametros pasados en el Header es Authorization. **En este comando esperamos que nos pases tu client_id y tu client_secret "hasheados"**. [Aquí](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica) puedes ver como generar el hash.
+Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. **En este comando esperamos que nos pases tu client_id y tu client_secret "hasheados"**. [Aquí](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica) puedes ver como generar el hash.
 
 Parametro | Descripción
 --------- | -----------
@@ -304,7 +304,7 @@ Este endpoint da de alta una cuenta de ahorro al cliente.
 
 ### HTTP Request
 
-`GET http://www.api.btdevelopers.com:8080/v0/savingAccount`
+`POST http://www.api.btdevelopers.com:8080/v0/savingAccount`
 
 Parametro | Descripción
 --------- | -----------
