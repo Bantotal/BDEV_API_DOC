@@ -118,7 +118,7 @@ Para ello deberás realizar el siguiente POST:
 
 `http://www.auth.btdevelopers.com:8090/oauth/token`
 
-Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. **En este comando esperamos que nos pases tu client_id y tu client_secret en Base64**. De esta manera client_id:client_secret. 
+Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. **En este comando esperamos que nos pases tu client_id y tu client_secret en Base64**. De esta manera: client_id:client_secret. 
 
 [Aquí](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_acceso_b%C3%A1sica) puedes ver como generar el string de HTTP Basic authentication.
 
