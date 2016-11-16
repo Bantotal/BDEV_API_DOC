@@ -169,13 +169,7 @@ Cómo estamos en una versión beta, comunicate con nosotros para recibir un clie
 <p>Remplaza <em>blablabla</em> por tu client_id, y <em>https://www.youawesomeapp.com</em> por la url de tu aplicación</p>
 </blockquote>
 
-<p><code class="prettyprint">http://www.auth.btdevelopers.com:8090/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
-
-<aside class="warning">
-Cómo veras, no utilizamos https. Esto es porque este es un ambiente “arena” y es la versión beta.
-En la próxima versión, y en las versiones reales disponibles en los clientes, por supuesto que será https.
-Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
-</aside>
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
 <h3 id="parametros">Parametros</h3>
 
@@ -211,7 +205,7 @@ Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 
 <p>Otorgados los permisos, el cliente será redireccionado al Redirect URI (el que nos pasaste en el URL anterior) con el código de autorización, de la siguiente forma:</p>
 
-<p><code class="prettyprint">http://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE</code></p>
+<p><code class="prettyprint">https://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE</code></p>
 
 <h3 id="paso-4">Paso 4</h3>
 
@@ -223,7 +217,7 @@ Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
   -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
   -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redi
   rect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
-  <span class="s2">"http://www.auth.btdevelopers.com:8090/oauth/token"</span>
+  <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
 </code></pre>
 
 <blockquote>
@@ -240,7 +234,7 @@ Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 
 <p>Para ello deberás realizar el siguiente POST:</p>
 
-<p><code class="prettyprint">http://www.auth.btdevelopers.com:8090/oauth/token</code></p>
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/oauth/token</code></p>
 
 <p>Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. <strong>En este comando esperamos que nos pases tu client_id y tu client_secret en Base64</strong>. De esta manera: client_id:client_secret. </p>
 
@@ -277,7 +271,7 @@ Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
 se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/client"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -317,7 +311,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-datos">Obtener datos</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/client"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -346,7 +340,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/client</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/client</code></p>
 
 <h1 id="cuentas">Cuentas</h1>
 
@@ -355,7 +349,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-cuentas">Obtener cuentas</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/accounts"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts"</span>
 </code></pre>
 
 <blockquote>
@@ -383,12 +377,12 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/accounts</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts</code></p>
 
 <h2 id="obtener-una-cuenta">Obtener una cuenta</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/accounts/&lt;ID&gt;"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;"</span>
 </code></pre>
 
 <blockquote>
@@ -407,7 +401,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://www.api.btdevelopers.com:8080/v0/accounts/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -426,7 +420,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -d <span class="s1">'currency=USD&amp;description=Chanchita'</span> 
-  <span class="s2">"http://www.api.btdevelopers.com:8080/v0/savingAccount"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/savingAccount"</span>
 </code></pre>
 
 <blockquote>
@@ -446,7 +440,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://www.api.btdevelopers.com:8080/v0/savingAccount</code></p>
+<p><code class="prettyprint">POST https://www.api.btdevelopers.com/v0/savingAccount</code></p>
 
 <table><thead>
 <tr>
