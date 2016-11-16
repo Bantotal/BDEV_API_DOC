@@ -60,13 +60,7 @@ En este paso, la aplicación que desarrolles, deberá **redireccionar** al login
 
 > Remplaza *blablabla* por tu client_id, y *https://www.youawesomeapp.com* por la url de tu aplicación
 
-`http://www.auth.btdevelopers.com:8090/dialog/authorize?client_id=blablabla&response_type=code&redirect_uri=https://www.youawesomeapp.com/`
-
-<aside class="warning">
-Cómo veras, no utilizamos https. Esto es porque este es un ambiente “arena” y es la versión beta.
-En la próxima versión, y en las versiones reales disponibles en los clientes, por supuesto que será https.
-Otro detalle, es el puerto en la URL, esto tambien lo corregiremos.
-</aside>
+`https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&response_type=code&redirect_uri=https://www.youawesomeapp.com/`
 
 ### Parametros
 
@@ -88,7 +82,7 @@ De esto tampoco debes preocuparte :D
 
 Otorgados los permisos, el cliente será redireccionado al Redirect URI (el que nos pasaste en el URL anterior) con el código de autorización, de la siguiente forma:
 
-`http://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE`
+`https://www.youawesomeapp.com/?code=SERVER_GENERATED_AUTHORIZATION_CODE`
 
 ### Paso 4
 
@@ -100,7 +94,7 @@ curl -X POST
   -H "Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ=" 
   -d 'client=blablabla&code=SERVER_GENERATED_AUTHORIZATION_CODE&redi
   rect_uri=https://www.youawesomeapp.com/&grant_type=authorization_code'
-  "http://www.auth.btdevelopers.com:8090/oauth/token"
+  "https://www.auth.btdevelopers.com/oauth/token"
 ```
 > El POST te retornará la siguiente estructura JSON:
 
@@ -116,7 +110,7 @@ Solo resta el último paso. Aquí deberas intercambiar el `code` obtenido por el
 
 Para ello deberás realizar el siguiente POST:
 
-`http://www.auth.btdevelopers.com:8090/oauth/token`
+`https://www.auth.btdevelopers.com/oauth/token`
 
 Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. **En este comando esperamos que nos pases tu client_id y tu client_secret en Base64**. De esta manera: client_id:client_secret. 
 
@@ -138,7 +132,7 @@ grant_type | authorization_code – Indica que la operación deseada es intercam
 se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "http://www.api.btdevelopers.com:8080/v0/client"
+  "https://www.api.btdevelopers.com/v0/client"
 ```
 > El GET te retornará la siguiente estructura JSON:
 
@@ -179,7 +173,7 @@ En esta sección, encontrarás todos los recursos asociados a los datos de los c
 ```shell
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "http://www.api.btdevelopers.com:8080/v0/client"
+  "https://www.api.btdevelopers.com/v0/client"
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -208,7 +202,7 @@ Este endpoint retorna los datos del cliente autenticado.
 
 ### HTTP Request
 
-`GET http://www.api.btdevelopers.com:8080/v0/client`
+`GET https://www.api.btdevelopers.com/v0/client`
 
 # Cuentas
 
@@ -219,7 +213,7 @@ En esta sección, encontrarás todos los recursos asociados a las cuentas de los
 ```shell
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "http://www.api.btdevelopers.com:8080/v0/accounts"
+  "https://www.api.btdevelopers.com/v0/accounts"
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -247,14 +241,14 @@ Este endpoint retorna las cuentas del cliente autenticado.
 
 ### HTTP Request
 
-`GET http://www.api.btdevelopers.com:8080/v0/accounts`
+`GET https://www.api.btdevelopers.com/v0/accounts`
 
 ## Obtener una cuenta
 
 ```shell
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "http://www.api.btdevelopers.com:8080/v0/accounts/<ID>"
+  "https://www.api.btdevelopers.com/v0/accounts/<ID>"
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -273,7 +267,7 @@ Este endpoint retorna la información de una única cuenta, la cual es filtrada 
 
 ### HTTP Request
 
-`GET http://www.api.btdevelopers.com:8080/v0/accounts/<ID>`
+`GET https://www.api.btdevelopers.com/v0/accounts/<ID>`
 
 Parametro | Descripción
 --------- | -----------
@@ -286,7 +280,7 @@ curl -X POST
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
   -H "Content-Type: application/x-www-form-urlencoded" 
   -d 'currency=USD&description=Chanchita' 
-  "http://www.api.btdevelopers.com:8080/v0/savingAccount"
+  "https://www.api.btdevelopers.com/v0/savingAccount"
 ```
 
 > El POST te retornará la siguiente estructura JSON:
@@ -306,7 +300,7 @@ Este endpoint da de alta una cuenta de ahorro al cliente.
 
 ### HTTP Request
 
-`POST http://www.api.btdevelopers.com:8080/v0/savingAccount`
+`POST https://www.api.btdevelopers.com/v0/savingAccount`
 
 Parametro | Descripción
 --------- | -----------
