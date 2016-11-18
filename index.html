@@ -415,6 +415,61 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
+<h2 id="obtener-movimientos-de-una-cuenta">Obtener movimientos de una cuenta</h2>
+<pre class="highlight shell"><code>curl -X GET 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements"</span>
+</code></pre>
+
+<blockquote>
+<p>El GET te retornará la siguiente estructura JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"582f416f2a8a4810301dbf0b"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a4e29a77cc84c393da1da7d06beb0ec0d12ae58314e26b137f913f4f85e25e2f"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:11.858Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Impuestos"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ammount"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creditAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21500</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creditAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae6aa"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"debitAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">20500</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"debitAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae7bb"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"582f417d2a8a4810301dbf0c"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:25.823Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Almuerzo"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ammount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creditAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21700</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"creditAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae6aa"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"debitAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21300</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"debitAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae7bb"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Este endpoint retorna los movimientos de una única cuenta, la cual es filtrada mediante la URL.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements</code></p>
+
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>Identificador de la cuenta.</td>
+</tr>
+</tbody></table>
+
 <h2 id="crear-cuenta-de-ahorro">Crear cuenta de ahorro</h2>
 <pre class="highlight shell"><code>curl -X POST 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
@@ -458,6 +513,69 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
+<h1 id="transferencias">Transferencias</h1>
+
+<p>En esta sección, encontrarás todos los recursos asociados a las transferencias entre cuentas. Por ejemplo, entre cuentas, a terceros, internacionales, etc.</p>
+
+<h2 id="entre-cuentas">Entre cuentas</h2>
+<pre class="highlight shell"><code>curl -X POST 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
+  -d <span class="s1">'debitAccount=581cfacc24ad4706583ae7bb&amp;creditAccount=581cfacc24ad4706583ae6aa&amp;currency=USD&amp;ammount=200&amp;reference=Almuerzo'</span> 
+  <span class="s2">"https://www.api.btdevelopers.com/v0/transferMyAccounts"</span>
+</code></pre>
+
+<blockquote>
+<p>El POST te retornará la siguiente estructura JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:25.823Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Almuerzo"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"ammount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creditAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21700</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creditAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae6aa"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"debitAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21300</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"debitAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae7bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"582f417d2a8a4810301dbf0c"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Este endpoint da de alta una cuenta de ahorro al cliente.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://www.api.btdevelopers.com/v0/transferMyAccounts</code></p>
+
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>debitAccount</td>
+<td>Identificador de cuenta débito</td>
+</tr>
+<tr>
+<td>creditAccount</td>
+<td>Identificador de cuenta cédito</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Moneda de la cuenta (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>)</td>
+</tr>
+<tr>
+<td>ammount</td>
+<td>Importe de la transferencia</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>Texto de referencia</td>
+</tr>
+</tbody></table>
+
           <h1 id="errores">Errores</h1>
 
 <aside class="notice">Todos los endpoints manejan los errores de la misma manera</aside>
@@ -494,40 +612,8 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h1 id="pr-ximos-pasos">Próximos pasos</h1>
 
-<p>Actualmente estamos en la versión 0.1.
-Estos son las features que tenemos en vista para la próxima versión (0.2):</p>
-
-<table><thead>
-<tr>
-<th>Feature</th>
-<th>Versión</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Diseño de la página de autenticación de cliente</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>Diseño de la página de autorización de cliente</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>Endpoint obtener movimientos</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>Endpoint transferencias entre cuentas</td>
-<td>0.2</td>
-</tr>
-<tr>
-<td>Quitar puertos de URL</td>
-<td>0.2</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Estas features las lanzaremos el Viernes 18 de Noviembre del 2016.
-</aside>
+<p>Actualmente estamos en la versión 0.2.
+Te informaremos cuales serán las features que tenemos en vista para la próxima versión (0.3).</p>
 
 <p><code class="prettyprint">Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que 
 no te gusta? Esperamos tus comentarios.</code></p>
