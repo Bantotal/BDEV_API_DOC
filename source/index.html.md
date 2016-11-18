@@ -273,6 +273,55 @@ Parametro | Descripción
 --------- | -----------
 ID | Identificador de la cuenta.
 
+## Obtener movimientos de una cuenta
+
+```shell
+curl -X GET 
+  -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
+  "https://www.api.btdevelopers.com/v0/accounts/<ID>/movements"
+```
+
+> El GET te retornará la siguiente estructura JSON:
+
+```json 
+[
+  {
+    "_id": "582f416f2a8a4810301dbf0b",
+    "signature": "a4e29a77cc84c393da1da7d06beb0ec0d12ae58314e26b137f913f4f85e25e2f",
+    "date": "2016-11-18T17:59:11.858Z",
+    "reference": "Impuestos",
+    "ammount": 500,
+    "currency": "USD",
+    "creditAccountBalance": 21500,
+    "creditAccount": "581cfacc24ad4706583ae6aa",
+    "debitAccountBalance": 20500,
+    "debitAccount": "581cfacc24ad4706583ae7bb"
+  },
+  {
+    "_id": "582f417d2a8a4810301dbf0c",
+    "signature": "34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82",
+    "date": "2016-11-18T17:59:25.823Z",
+    "reference": "Almuerzo",
+    "ammount": 200,
+    "currency": "USD",
+    "creditAccountBalance": 21700,
+    "creditAccount": "581cfacc24ad4706583ae6aa",
+    "debitAccountBalance": 21300,
+    "debitAccount": "581cfacc24ad4706583ae7bb"
+  }
+]
+```
+
+Este endpoint retorna los movimientos de una única cuenta, la cual es filtrada mediante la URL.
+
+### HTTP Request
+
+`GET https://www.api.btdevelopers.com/v0/accounts/<ID>/movements`
+
+Parametro | Descripción
+--------- | -----------
+ID | Identificador de la cuenta.
+
 ## Crear cuenta de ahorro
 
 ```shell
@@ -306,3 +355,48 @@ Parametro | Descripción
 --------- | -----------
 currency | Moneda de la cuenta (valores válidos `USD` - `$`).
 description | Un nombre para la cuenta.
+
+# Transferencias
+
+En esta sección, encontrarás todos los recursos asociados a las transferencias entre cuentas. Por ejemplo, entre cuentas, a terceros, internacionales, etc.
+
+## Entre cuentas
+
+```shell
+curl -X POST 
+  -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
+  -H "Content-Type: application/x-www-form-urlencoded" 
+  -d 'debitAccount=581cfacc24ad4706583ae7bb&creditAccount=581cfacc24ad4706583ae6aa&currency=USD&ammount=200&reference=Almuerzo' 
+  "https://www.api.btdevelopers.com/v0/transferMyAccounts"
+```
+
+> El POST te retornará la siguiente estructura JSON:
+
+```json 
+{
+  "signature": "34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82",
+  "date": "2016-11-18T17:59:25.823Z",
+  "reference": "Almuerzo",
+  "ammount": 200,
+  "currency": "USD",
+  "creditAccountBalance": 21700,
+  "creditAccount": "581cfacc24ad4706583ae6aa",
+  "debitAccountBalance": 21300,
+  "debitAccount": "581cfacc24ad4706583ae7bb",
+  "_id": "582f417d2a8a4810301dbf0c"
+}
+```
+
+Este endpoint da de alta una cuenta de ahorro al cliente.
+
+### HTTP Request
+
+`POST https://www.api.btdevelopers.com/v0/transferMyAccounts`
+
+Parametro | Descripción
+--------- | -----------
+debitAccount | Identificador de cuenta débito
+creditAccount | Identificador de cuenta cédito
+currency | Moneda de la cuenta (valores válidos `USD` - `$`)
+ammount | Importe de la transferencia
+reference | Texto de referencia 
