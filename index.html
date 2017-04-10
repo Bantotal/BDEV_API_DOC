@@ -110,13 +110,13 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li>v0.2</li>
+            <li>v0.1</li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introducci-n">Introducción</h1>
+        <h1 id="introducci-n-2">Introducción 2</h1>
 
 <p>Bienvenido a ¡<strong>Bantotal Developers</strong>! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.</p>
 
@@ -169,7 +169,7 @@ Cómo estamos en una versión beta, comunicate con nosotros para recibir un clie
 <p>Remplaza <em>blablabla</em> por tu client_id, y <em>https://www.youawesomeapp.com</em> por la url de tu aplicación</p>
 </blockquote>
 
-<p><code class="prettyprint">https://auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/dialog/authorize?client_id=blablabla&amp;response_type=code&amp;redirect_uri=https://www.youawesomeapp.com/</code></p>
 
 <h3 id="parametros">Parametros</h3>
 
@@ -217,7 +217,7 @@ Cómo estamos en una versión beta, comunicate con nosotros para recibir un clie
   -H <span class="s2">"Authorization: Basic YWJjMTIzOnNzaC1zZWNyZXQ="</span> 
   -d <span class="s1">'client=blablabla&amp;code=SERVER_GENERATED_AUTHORIZATION_CODE&amp;redi
   rect_uri=https://www.youawesomeapp.com/&amp;grant_type=authorization_code'</span>
-  <span class="s2">"https://auth.btdevelopers.com/oauth/token"</span>
+  <span class="s2">"https://www.auth.btdevelopers.com/oauth/token"</span>
 </code></pre>
 
 <blockquote>
@@ -234,7 +234,7 @@ Cómo estamos en una versión beta, comunicate con nosotros para recibir un clie
 
 <p>Para ello deberás realizar el siguiente POST:</p>
 
-<p><code class="prettyprint">https://auth.btdevelopers.com/oauth/token</code></p>
+<p><code class="prettyprint">https://www.auth.btdevelopers.com/oauth/token</code></p>
 
 <p>Como verás en el ejemplo de la derecha, uno de los parametros pasados en el Header es Authorization. <strong>En este comando esperamos que nos pases tu client_id y tu client_secret en Base64</strong>. De esta manera: client_id:client_secret. </p>
 
@@ -271,7 +271,7 @@ Cómo estamos en una versión beta, comunicate con nosotros para recibir un clie
 se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/client"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -311,7 +311,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-datos">Obtener datos</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/client"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/client"</span>
 </code></pre>
 
 <blockquote>
@@ -340,7 +340,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.btdevelopers.com/v0/client</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/client</code></p>
 
 <h1 id="cuentas">Cuentas</h1>
 
@@ -349,7 +349,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-cuentas">Obtener cuentas</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/accounts"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts"</span>
 </code></pre>
 
 <blockquote>
@@ -377,12 +377,12 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.btdevelopers.com/v0/accounts</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts</code></p>
 
 <h2 id="obtener-una-cuenta">Obtener una cuenta</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/accounts/&lt;ID&gt;"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;"</span>
 </code></pre>
 
 <blockquote>
@@ -401,7 +401,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.btdevelopers.com/v0/accounts/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -418,7 +418,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <h2 id="obtener-movimientos-de-una-cuenta">Obtener movimientos de una cuenta</h2>
 <pre class="highlight shell"><code>curl -X GET 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements"</span>
 </code></pre>
 
 <blockquote>
@@ -456,7 +456,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements</code></p>
+<p><code class="prettyprint">GET https://www.api.btdevelopers.com/v0/accounts/&lt;ID&gt;/movements</code></p>
 
 <table><thead>
 <tr>
@@ -475,7 +475,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -d <span class="s1">'currency=USD&amp;description=Chanchita'</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/savingAccount"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/savingAccount"</span>
 </code></pre>
 
 <blockquote>
@@ -495,7 +495,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.btdevelopers.com/v0/savingAccount</code></p>
+<p><code class="prettyprint">POST https://www.api.btdevelopers.com/v0/savingAccount</code></p>
 
 <table><thead>
 <tr>
@@ -522,7 +522,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
   -d <span class="s1">'debitAccount=581cfacc24ad4706583ae7bb&amp;creditAccount=581cfacc24ad4706583ae6aa&amp;currency=USD&amp;ammount=200&amp;reference=Almuerzo'</span> 
-  <span class="s2">"https://api.btdevelopers.com/v0/transferMyAccounts"</span>
+  <span class="s2">"https://www.api.btdevelopers.com/v0/transferMyAccounts"</span>
 </code></pre>
 
 <blockquote>
@@ -546,7 +546,7 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.btdevelopers.com/v0/transferMyAccounts</code></p>
+<p><code class="prettyprint">POST https://www.api.btdevelopers.com/v0/transferMyAccounts</code></p>
 
 <table><thead>
 <tr>
