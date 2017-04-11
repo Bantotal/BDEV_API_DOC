@@ -14,11 +14,12 @@ Error Code | Descripción
 
 # Próximos pasos
 
-Actualmente estamos en la versión 0.2.
-Te informaremos cuales serán las features que tenemos en vista para la próxima versión (0.3).
+Actualmente estamos en la versión 1.0.
+Te informaremos cuales serán las features que tenemos en vista para la próxima versión (1.1).
 
 
-`Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que 
-no te gusta? Esperamos tus comentarios.`
+`Querémos que nos ayudes a mejorar. 
+¿Qué necesitas? 
+¿Hay algo que no te gusta? Esperamos tus comentarios.`
 
-El Team de B[Developers] :)
+El Team de B[Developers] ✌️

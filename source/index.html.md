@@ -5,7 +5,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - v0.1
+  - v1.0
 
 includes:
   - errors
@@ -40,7 +40,7 @@ Antes de comenzar a detallar cada una de las partes, es **importante** mencionar
 `client_secret: shhhhhhhh`
 
 <aside class="notice">
-Para registrar tu aplicación ingresá en [Bantotal Developers Admin](https://developers.bantotal.com/admin) 
+Para registrar tu aplicación ingresá en `https://developers.bantotal.com/admin`
 </aside>
 
 ## Obtener el access token
@@ -298,7 +298,7 @@ curl -X GET
     "type": "Debit",
     "date": "2016-11-18T17:59:11.858Z",
     "valueDate": "2016-11-18T17:59:11.858Z",
-    "balance": "14060"
+    "balance": "14060",
     "currency": "USD",
     "ammount": "500",
     "reference": "Impuestos",
@@ -392,6 +392,10 @@ currency | Moneda de la transferencia (valores válidos `USD` - `$`)
 ammount | Importe de la transferencia
 reference | Texto de referencia 
 
+<aside class="notice">
+En la versión 1 de la API no estamos devolviendo impuestos, comiesiones, cambios de moneda. Pero tenlo en cuenta, pronto estará disponible.
+</aside>
+
 ### Paso 2
 
 Confirmar transferencia: Se confirma el pago 💰
@@ -424,8 +428,4 @@ curl -X POST
 
 Parametro | Descripción
 --------- | -----------
-uidDebit | Identificador de cuenta débito
-uidCredit | Identificador de cuenta cédito
-currency | Moneda de la transferencia (valores válidos `USD` - `$`)
-ammount | Importe de la transferencia
-reference | Texto de referencia 
+uid | Identificador de la transferencia a confirmar
