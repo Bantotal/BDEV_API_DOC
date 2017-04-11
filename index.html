@@ -506,40 +506,35 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h2 id="entre-cuentas">Entre cuentas</h2>
 
-<p>La transferencia entre cuentas consta de dos pasos:
-1. Iniciar transferencia
-2. Confirmar transferencia</p>
+<p>La transferencia entre cuentas consta de dos pasos:</p>
 
-<p>En el paso 1 se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc. En el paso 2 se confirma el pago.</p>
+<h3 id="paso-1">Paso 1</h3>
+
+<p>Iniciar transferencia: Se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc.</p>
 <pre class="highlight shell"><code>curl -X POST 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
-  -d <span class="s1">'debitAccount=581cfacc24ad4706583ae7bb&amp;creditAccount=581cfacc24ad4706583ae6aa&amp;currency=USD&amp;ammount=200&amp;reference=Almuerzo'</span> 
-  <span class="s2">"https://www.api.btdevelopers.com/v0/transferMyAccounts"</span>
+  -d <span class="s1">'uidDebit=1&amp;uidCredit=2&amp;currency=USD&amp;ammount=200&amp;reference=Pago de almuerzo'</span> 
+  <span class="s2">"https://developers.bantotal.com/api/v1/initTransferMyAccounts"</span>
 </code></pre>
 
 <blockquote>
 <p>El POST te retornará la siguiente estructura JSON:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34FGH67J90KLLL0"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:25.823Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Almuerzo"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"ammount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"creditAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21700</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"creditAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae6aa"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"debitAccountBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">21300</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"debitAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581cfacc24ad4706583ae7bb"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"582f417d2a8a4810301dbf0c"</span><span class="w">
+  </span><span class="nt">"uidDebit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"debitBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2500"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uidCredit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creditBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>Este endpoint da de alta una cuenta de ahorro al cliente.</p>
-
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://www.api.btdevelopers.com/v0/transferMyAccounts</code></p>
+<p><code class="prettyprint">POST https://developers.bantotal.com/api/v1/initTransferMyAccounts</code></p>
 
 <table><thead>
 <tr>
@@ -548,16 +543,72 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </thead><tbody>
 <tr>
-<td>debitAccount</td>
+<td>uidDebit</td>
 <td>Identificador de cuenta débito</td>
 </tr>
 <tr>
-<td>creditAccount</td>
+<td>uidCredit</td>
 <td>Identificador de cuenta cédito</td>
 </tr>
 <tr>
 <td>currency</td>
-<td>Moneda de la cuenta (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>)</td>
+<td>Moneda de la transferencia (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>)</td>
+</tr>
+<tr>
+<td>ammount</td>
+<td>Importe de la transferencia</td>
+</tr>
+<tr>
+<td>reference</td>
+<td>Texto de referencia</td>
+</tr>
+</tbody></table>
+
+<h3 id="paso-2">Paso 2</h3>
+
+<p>Confirmar transferencia: Se confirma el pago 💰</p>
+<pre class="highlight shell"><code>curl -X POST 
+  -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
+  -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
+  -d <span class="s1">'uid=34FGH67J90KLLL0'</span> 
+  <span class="s2">"https://developers.bantotal.com/api/v1/confirmTransferMyAccounts"</span>
+</code></pre>
+
+<blockquote>
+<p>El POST te retornará la siguiente estructura JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34FGH67J90KLLL0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:25.823Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uidDebit"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"debitBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2500"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uidCredit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"creditBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://developers.bantotal.com/api/v1/confirmTransferMyAccounts</code></p>
+
+<table><thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uidDebit</td>
+<td>Identificador de cuenta débito</td>
+</tr>
+<tr>
+<td>uidCredit</td>
+<td>Identificador de cuenta cédito</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Moneda de la transferencia (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>)</td>
 </tr>
 <tr>
 <td>ammount</td>
