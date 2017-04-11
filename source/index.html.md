@@ -353,46 +353,79 @@ En esta sección, encontrarás todos los recursos asociados a las transferencias
 ## Entre cuentas
 
 La transferencia entre cuentas consta de dos pasos:
-1. Iniciar transferencia
-2. Confirmar transferencia
 
-En el paso 1 se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc. En el paso 2 se confirma el pago.
+### Paso 1
+
+Iniciar transferencia: Se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc.
 
 ```shell
 curl -X POST 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
   -H "Content-Type: application/x-www-form-urlencoded" 
-  -d 'debitAccount=581cfacc24ad4706583ae7bb&creditAccount=581cfacc24ad4706583ae6aa&currency=USD&ammount=200&reference=Almuerzo' 
-  "https://www.api.btdevelopers.com/v0/transferMyAccounts"
+  -d 'uidDebit=1&uidCredit=2&currency=USD&ammount=200&reference=Pago de almuerzo' 
+  "https://developers.bantotal.com/api/v1/initTransferMyAccounts"
 ```
 
 > El POST te retornará la siguiente estructura JSON:
 
 ```json 
 {
+  "uid": "34FGH67J90KLLL0",
   "signature": "34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82",
   "date": "2016-11-18T17:59:25.823Z",
-  "reference": "Almuerzo",
-  "ammount": 200,
-  "currency": "USD",
-  "creditAccountBalance": 21700,
-  "creditAccount": "581cfacc24ad4706583ae6aa",
-  "debitAccountBalance": 21300,
-  "debitAccount": "581cfacc24ad4706583ae7bb",
-  "_id": "582f417d2a8a4810301dbf0c"
+  "uidDebit": 1,
+  "debitBalance": "2500",
+  "uidCredit": 2,
+  "creditBalance": "500"
 }
 ```
 
-Este endpoint da de alta una cuenta de ahorro al cliente.
-
 ### HTTP Request
 
-`POST https://www.api.btdevelopers.com/v0/transferMyAccounts`
+`POST https://developers.bantotal.com/api/v1/initTransferMyAccounts`
 
 Parametro | Descripción
 --------- | -----------
-debitAccount | Identificador de cuenta débito
-creditAccount | Identificador de cuenta cédito
-currency | Moneda de la cuenta (valores válidos `USD` - `$`)
+uidDebit | Identificador de cuenta débito
+uidCredit | Identificador de cuenta cédito
+currency | Moneda de la transferencia (valores válidos `USD` - `$`)
+ammount | Importe de la transferencia
+reference | Texto de referencia 
+
+### Paso 2
+
+Confirmar transferencia: Se confirma el pago 💰
+
+```shell
+curl -X POST 
+  -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
+  -H "Content-Type: application/x-www-form-urlencoded" 
+  -d 'uid=34FGH67J90KLLL0' 
+  "https://developers.bantotal.com/api/v1/confirmTransferMyAccounts"
+```
+
+> El POST te retornará la siguiente estructura JSON:
+
+```json 
+{
+  "uid": "34FGH67J90KLLL0",
+  "signature": "34652e1d575bb6c5daf3884e70baf13839a62b4c1a218fd14f487c073bcb7d82",
+  "date": "2016-11-18T17:59:25.823Z",
+  "uidDebit": 1,
+  "debitBalance": "2500",
+  "uidCredit": 2,
+  "creditBalance": "500"
+}
+```
+
+### HTTP Request
+
+`POST https://developers.bantotal.com/api/v1/confirmTransferMyAccounts`
+
+Parametro | Descripción
+--------- | -----------
+uidDebit | Identificador de cuenta débito
+uidCredit | Identificador de cuenta cédito
+currency | Moneda de la transferencia (valores válidos `USD` - `$`)
 ammount | Importe de la transferencia
 reference | Texto de referencia 
