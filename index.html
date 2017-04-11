@@ -505,6 +505,12 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 <p>En esta sección, encontrarás todos los recursos asociados a las transferencias entre cuentas. Por ejemplo, entre cuentas, a terceros, internacionales, etc.</p>
 
 <h2 id="entre-cuentas">Entre cuentas</h2>
+
+<p>La transferencia entre cuentas consta de dos pasos:
+1. Iniciar transferencia
+2. Confirmar transferencia</p>
+
+<p>En el paso 1 se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc. En el paso 2 se confirma el pago.</p>
 <pre class="highlight shell"><code>curl -X POST 
   -H <span class="s2">"Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"</span>  
   -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> 
