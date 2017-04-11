@@ -352,6 +352,12 @@ En esta sección, encontrarás todos los recursos asociados a las transferencias
 
 ## Entre cuentas
 
+La transferencia entre cuentas consta de dos pasos:
+1. Iniciar transferencia
+2. Confirmar transferencia
+
+En el paso 1 se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc. En el paso 2 se confirma el pago.
+
 ```shell
 curl -X POST 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
