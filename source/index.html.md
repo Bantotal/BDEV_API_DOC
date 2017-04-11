@@ -132,7 +132,7 @@ grant_type | authorization_code – Indica que la operación deseada es intercam
 se pasa en Authorization: Bearer access_token
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "https://developers.bantotal.com/api/v1/client"
+  "https://developers.bantotal.com/api/v1/clients"
 ```
 > El GET te retornará la siguiente estructura JSON:
 
@@ -169,7 +169,7 @@ En esta sección, encontrarás todos los recursos asociados a los datos de los c
 ```shell
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
-  "https://developers.bantotal.com/api/v1/client"
+  "https://developers.bantotal.com/api/v1/clients"
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -194,7 +194,7 @@ Este endpoint retorna los datos del cliente autenticado.
 
 ### HTTP Request
 
-`GET https://developers.bantotal.com/api/v1/client`
+`GET https://developers.bantotal.com/api/v1/clients`
 
 # Cuentas
 
