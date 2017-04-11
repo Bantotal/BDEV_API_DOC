@@ -110,7 +110,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li>v0.1</li>
+            <li>v1.0</li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -145,7 +145,7 @@ Para autenticar utilizamos el conocido protocolo <a href="https://oauth.net/2/">
 <p><code class="prettyprint">client_secret: shhhhhhhh</code></p>
 
 <aside class="notice">
-Para registrar tu aplicación ingresá en [Bantotal Developers Admin](https://developers.bantotal.com/admin) 
+Para registrar tu aplicación ingresá en `https://developers.bantotal.com/admin`
 </aside>
 
 <h2 id="obtener-el-access-token">Obtener el access token</h2>
@@ -438,8 +438,8 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
     </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debit"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:11.858Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"valueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-18T17:59:11.858Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14060"</span><span class="w">
-    </span><span class="s2">"currency"</span><span class="err">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14060"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"ammount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Impuestos"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pago de sueldo"</span><span class="p">,</span><span class="w">
@@ -564,6 +564,10 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </tbody></table>
 
+<aside class="notice">
+En la versión 1 de la API no estamos devolviendo impuestos, comiesiones, cambios de moneda. Pero tenlo en cuenta, pronto estará disponible.
+</aside>
+
 <h3 id="paso-2">Paso 2</h3>
 
 <p>Confirmar transferencia: Se confirma el pago 💰</p>
@@ -599,24 +603,8 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 </tr>
 </thead><tbody>
 <tr>
-<td>uidDebit</td>
-<td>Identificador de cuenta débito</td>
-</tr>
-<tr>
-<td>uidCredit</td>
-<td>Identificador de cuenta cédito</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>Moneda de la transferencia (valores válidos <code class="prettyprint">USD</code> - <code class="prettyprint">$</code>)</td>
-</tr>
-<tr>
-<td>ammount</td>
-<td>Importe de la transferencia</td>
-</tr>
-<tr>
-<td>reference</td>
-<td>Texto de referencia</td>
+<td>uid</td>
+<td>Identificador de la transferencia a confirmar</td>
 </tr>
 </tbody></table>
 
@@ -656,13 +644,14 @@ Para el ejemplo utilizamos la consulta de cliente, pero fue solamente un ejemplo
 
 <h1 id="pr-ximos-pasos">Próximos pasos</h1>
 
-<p>Actualmente estamos en la versión 0.2.
-Te informaremos cuales serán las features que tenemos en vista para la próxima versión (0.3).</p>
+<p>Actualmente estamos en la versión 1.0.
+Te informaremos cuales serán las features que tenemos en vista para la próxima versión (1.1).</p>
 
-<p><code class="prettyprint">Querémos que nos ayudes a mejorar. ¿Qué necesitas? ¿Hay algo que 
-no te gusta? Esperamos tus comentarios.</code></p>
+<p><code class="prettyprint">Querémos que nos ayudes a mejorar. 
+¿Qué necesitas? 
+¿Hay algo que no te gusta? Esperamos tus comentarios.</code></p>
 
-<p>El Team de B[Developers] :)</p>
+<p>El Team de B[Developers] ✌️</p>
 
       </div>
       <div class="dark-box">
