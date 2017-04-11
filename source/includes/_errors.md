@@ -23,3 +23,4 @@ Te informaremos cuales serán las features que tenemos en vista para la próxima
 ¿Hay algo que no te gusta? Esperamos tus comentarios.`
 
 El Team de B[Developers] ✌️
+

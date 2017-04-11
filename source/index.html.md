@@ -393,7 +393,7 @@ ammount | Importe de la transferencia
 reference | Texto de referencia 
 
 <aside class="notice">
-En la versión 1 de la API no estamos devolviendo impuestos, comiesiones, cambios de moneda. Pero tenlo en cuenta, pronto estará disponible.
+En la versión 1.0 de la API no estamos devolviendo impuestos, comiesiones, cambios de moneda. Pero tenlo en cuenta, pronto estará disponible.
 </aside>
 
 ### Paso 2
