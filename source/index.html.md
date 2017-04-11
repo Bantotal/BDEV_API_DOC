@@ -325,7 +325,7 @@ curl -X POST
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
   -H "Content-Type: application/x-www-form-urlencoded" 
   -d 'currency=USD' 
-  "https://developers.bantotal.com/api/v1/savingAccount"
+  "https://developers.bantotal.com/api/v1/savingAccounts"
 ```
 
 > El POST te retornará la siguiente estructura JSON:
@@ -340,7 +340,7 @@ Este endpoint da de alta una cuenta de ahorro al cliente.
 
 ### HTTP Request
 
-`POST https://developers.bantotal.com/api/v1/savingAccount`
+`POST https://developers.bantotal.com/api/v1/savingAccounts`
 
 Parametro | Descripción
 --------- | -----------
