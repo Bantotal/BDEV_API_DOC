@@ -217,28 +217,28 @@ curl -X GET
    "productType": "CC",
    "currency": "USD",
    "balance": "1200",
-   "description": "Cuenta corriente 1",
+   "description": "Cuenta corriente 1"
   },
   {
    "uid": "2",
    "productType": "CC",
-   "currency": "UYU",
+   "currency": "$",
    "balance": "25800",
-   "description": "Cuenta corriente 2",
+   "description": "Cuenta corriente 2"
   },
   {
    "uid": "3",
    "productType": "CA",
    "currency": "USD",
    "balance": "100",
-   "description": "Caja de ahorro 1",
+   "description": "Caja de ahorro 1"
   },
   {
    "uid": "4",
    "productType": "CA",
-   "currency": "UYU",
+   "currency": "$",
    "balance": "78500",
-   "description": "Caja de ahorro 2",
+   "description": "Caja de ahorro 2"
   }
 ]
 ```
@@ -265,7 +265,7 @@ curl -X GET
   "productType": "CC",
   "currency": "USD",
   "balance": "1200",
-  "description": "Cuenta corriente 1",
+  "description": "Cuenta corriente 1"
 }
 ```
 
@@ -293,7 +293,7 @@ curl -X GET
 [
   {
     "uid": "AA45GH5TM789DS34",
-    transactionId: "ASD56F54G890KKL",
+    "transactionId": "ASD56F54G890KKL",
     "signature": "a4e29a77cc84c393da1da7d06beb0ec0d12ae58314e26b137f913f4f85e25e2f",
     "type": "Debit",
     "date": "2016-11-18T17:59:11.858Z",
@@ -316,7 +316,7 @@ Este endpoint retorna los movimientos de una única cuenta, la cual es filtrada 
 
 Parametro | Descripción
 --------- | -----------
-ID | Identificador de la cuenta.
+UID | Identificador de la cuenta.
 
 ## Crear cuenta de ahorro
 
@@ -324,20 +324,15 @@ ID | Identificador de la cuenta.
 curl -X POST 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY"  
   -H "Content-Type: application/x-www-form-urlencoded" 
-  -d 'currency=USD&description=Chanchita' 
-  "https://www.api.btdevelopers.com/v0/savingAccount"
+  -d 'currency=USD' 
+  "https://developers.bantotal.com/api/v1/savingAccount"
 ```
 
 > El POST te retornará la siguiente estructura JSON:
 
 ```json 
 {
-  "description": "Chanchita",
-  "balance": "0",
-  "currency": "USD",
-  "productType": "CA",
-  "client": "5818fcd862b916439c226657",
-  "_id": "581cd3b7caf8ac0e2d1747c3"
+  "uid": "FGT567J7HAAA22EX"
 }
 ```
 
@@ -345,12 +340,11 @@ Este endpoint da de alta una cuenta de ahorro al cliente.
 
 ### HTTP Request
 
-`POST https://www.api.btdevelopers.com/v0/savingAccount`
+`POST https://developers.bantotal.com/api/v1/savingAccount`
 
 Parametro | Descripción
 --------- | -----------
 currency | Moneda de la cuenta (valores válidos `USD` - `$`).
-description | Un nombre para la cuenta.
 
 # Transferencias
 
