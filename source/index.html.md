@@ -15,7 +15,7 @@ search: true
 
 # Introducción
 
-Bienvenido a ¡**Bantotal Developers**! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 70 bancos en 15 países.
+Bienvenido a ¡**Bantotal Developers**! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.
 
 Te brindamos recursos tales como: autenticación, clientes, cuentas, pagos, movimientos, entre otros. 
 
@@ -348,7 +348,7 @@ currency | Moneda de la cuenta (valores válidos `USD` - `$`).
 
 # Transferencias
 
-En esta sección, encontrarás todos los recursos asociados a las transferencias entre cuentas. Por ejemplo, entre cuentas, a terceros, internacionales, etc.
+En esta sección, encontrarás todos los recursos asociados a las transferencias entre cuentas.
 
 ## Entre cuentas
 
@@ -356,7 +356,7 @@ La transferencia entre cuentas consta de dos pasos:
 
 ### Paso 1
 
-Iniciar transferencia: Se solicita la transferencia y se verifica información como: comosiones, cambio de moneda, impuestos, etc.
+Iniciar transferencia: Se solicita la transferencia y Bantotal se encarga de cálculo de comisiones, impuestos y cambio de moneda.
 
 ```shell
 curl -X POST 
