@@ -137,6 +137,17 @@ curl -X GET
 ```
 > El GET te retornará la siguiente estructura JSON:
 
+```javascript
+import BD from 'bd-client-js'
+ 
+const BantotalDevelopers = new BD()
+BantotalDevelopers.getClient(acceessToken)
+    .then(result) {
+        console.log(`Datos del cliente ${JSON.stringify(result)}`)
+    }
+    .catch(err) console.log('Error')
+```
+
 ```json
 {
   "uid": "FGH546H34KLO98OP",
@@ -151,17 +162,6 @@ curl -X GET
   "email": "cboni@mail.com",
   "phone": "123456789"
 }
-```
-
-```javascript
-import BD from 'bd-client-js'
- 
-const BantotalDevelopers = new BD()
-BantotalDevelopers.getClient(acceessToken)
-    .then(result) {
-        console.log(`Datos del cliente ${JSON.stringify(result)}`)
-    }
-    .catch(err) console.log('Error')
 ```
 
 Ahora que ya tienes el `access_token`, podrás acceder a los recursos.
