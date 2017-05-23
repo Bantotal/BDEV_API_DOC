@@ -13,7 +13,7 @@ includes:
 search: true
 ---
 
-# Introducción
+# Introducción 2
 
 Bienvenido a ¡**Bantotal Developers**! Aquí encontrarás toda la documentación necesaria para utilizar nuestra API y conectarte a Bantotal. De esta forma tu producto podrá ser utilizado por más de 50 bancos en 15 países.
 
