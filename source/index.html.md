@@ -506,3 +506,25 @@ BantotalDevelopers.confirmTransferMyAccounts(confirm, acceess_token)
 Parametro | Descripción
 --------- | -----------
 uid | Identificador de la transferencia a confirmar
+
+# SDK
+
+A continuación se detallan los SDK's disponibles.
+
+## JavaScript
+
+Para obtener más información sobre este sdk, ingresa en [bd-client-js](https://www.npmjs.com/package/bd-client-js)
+
+# Ejemplos
+
+A continuación algunos ejemplos de apps que utilizan la API de Bantotal Developers.
+
+## Mangos
+
+Es una aplicación móvil que tiene cómo objetivo mostrar al usuario rápidamente cuanto dinero tiene en su Banco.
+
+Esperamos que te sea de ayuda, no dudes en preguntarnos.
+
+[Código fuente](https://github.com/Bantotal/Mangos)
+
+
