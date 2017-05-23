@@ -281,9 +281,10 @@ curl -X GET
 <pre class="highlight javascript"><code><span class="kr">import</span> <span class="nx">BD</span> <span class="nx">from</span> <span class="s1">'bd-client-js'</span>
 
 <span class="kr">const</span> <span class="nx">BantotalDevelopers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BD</span><span class="p">()</span>
-<span class="nx">BantotalDevelopers</span><span class="p">.</span><span class="nx">getClient</span><span class="p">(</span><span class="nx">acceessToken</span><span class="p">)</span>
+
+<span class="nx">BantotalDevelopers</span><span class="p">.</span><span class="nx">getClient</span><span class="p">(</span><span class="nx">acceess_token</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Datos</span> <span class="nx">del</span> <span class="nx">cliente</span> <span class="nx">$</span><span class="p">{</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">result</span><span class="p">)}</span><span class="err">`</span><span class="p">)</span>
+        <span class="c1">// Your code</span>
     <span class="p">}</span>
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Error'</span><span class="p">)</span>
 </code></pre>
