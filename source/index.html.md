@@ -135,8 +135,6 @@ curl -X GET
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/clients"
 ```
-> El GET te retornará la siguiente estructura JSON:
-
 ```javascript
 import BD from 'bd-client-js'
  
@@ -148,6 +146,7 @@ BantotalDevelopers.getClient(acceess_token)
     }
     .catch(err) console.log('Error')
 ```
+> El GET te retornará la siguiente estructura JSON:
 
 ```json
 {
@@ -184,7 +183,6 @@ curl -X GET
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/clients"
 ```
-
 ```javascript
 BantotalDevelopers.getClient(acceess_token)
     .then(result) {
@@ -228,7 +226,6 @@ curl -X GET
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/accounts"
 ```
-
 ```javascript
 BantotalDevelopers.getAccounts(acceess_token)
     .then(result) {
@@ -285,7 +282,6 @@ curl -X GET
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/accounts/<UID>"
 ```
-
 ```javascript
 BantotalDevelopers.getAccountsById(uid, acceess_token)
     .then(result) {
@@ -323,7 +319,6 @@ curl -X GET
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/accounts/<UID>/movements"
 ```
-
 ```javascript
 BantotalDevelopers.getMovements(uid, acceess_token)
     .then(result) {
@@ -372,7 +367,6 @@ curl -X POST
   -d 'currency=USD' 
   "https://developers.bantotal.com/api/v1/savingAccounts"
 ```
-
 ```javascript
 const account = {
   currency: 'USD'  
@@ -422,7 +416,6 @@ curl -X POST
   -d 'uidDebit=1&uidCredit=2&currency=USD&ammount=200&reference=Pago de almuerzo' 
   "https://developers.bantotal.com/api/v1/initTransferMyAccounts"
 ```
-
 ```javascript
 const transfer = {
   uidDebit: 1,
@@ -480,7 +473,6 @@ curl -X POST
   -d 'uid=34FGH67J90KLLL0' 
   "https://developers.bantotal.com/api/v1/confirmTransferMyAccounts"
 ```
-
 ```javascript
 const confirm = {
   uid: 'FKD45ANV56'
