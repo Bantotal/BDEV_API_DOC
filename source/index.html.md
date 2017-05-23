@@ -141,9 +141,10 @@ curl -X GET
 import BD from 'bd-client-js'
  
 const BantotalDevelopers = new BD()
-BantotalDevelopers.getClient(acceessToken)
+
+BantotalDevelopers.getClient(acceess_token)
     .then(result) {
-        console.log(`Datos del cliente ${JSON.stringify(result)}`)
+        // Your code
     }
     .catch(err) console.log('Error')
 ```
