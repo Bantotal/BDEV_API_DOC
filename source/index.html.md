@@ -185,6 +185,14 @@ curl -X GET
   "https://developers.bantotal.com/api/v1/clients"
 ```
 
+```javascript
+BantotalDevelopers.getClient(acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
+```
+
 > El GET te retornará la siguiente estructura JSON:
 
 ```json
@@ -219,6 +227,14 @@ En esta sección, encontrarás todos los recursos asociados a las cuentas de los
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/accounts"
+```
+
+```javascript
+BantotalDevelopers.getAccounts(acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -270,6 +286,14 @@ curl -X GET
   "https://developers.bantotal.com/api/v1/accounts/<UID>"
 ```
 
+```javascript
+BantotalDevelopers.getAccountsById(uid, acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
+```
+
 > El GET te retornará la siguiente estructura JSON:
 
 ```json 
@@ -298,6 +322,14 @@ UID | Identificador de la cuenta.
 curl -X GET 
   -H "Authorization: Bearer hUEM8g7EK4u8hxFYpIw1YPlkjjrY" 
   "https://developers.bantotal.com/api/v1/accounts/<UID>/movements"
+```
+
+```javascript
+BantotalDevelopers.getMovements(uid, acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
 ```
 
 > El GET te retornará la siguiente estructura JSON:
@@ -341,6 +373,18 @@ curl -X POST
   "https://developers.bantotal.com/api/v1/savingAccounts"
 ```
 
+```javascript
+const account = {
+  currency: 'USD'  
+}
+
+BantotalDevelopers.savingAccounts(account, acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
+```
+
 > El POST te retornará la siguiente estructura JSON:
 
 ```json 
@@ -377,6 +421,22 @@ curl -X POST
   -H "Content-Type: application/x-www-form-urlencoded" 
   -d 'uidDebit=1&uidCredit=2&currency=USD&ammount=200&reference=Pago de almuerzo' 
   "https://developers.bantotal.com/api/v1/initTransferMyAccounts"
+```
+
+```javascript
+const transfer = {
+  uidDebit: 1,
+  uidCredit: 2,
+  currency: 'USD',
+  ammount: '1000',
+  reference: 'I love Bantotal Developers'
+}
+
+BantotalDevelopers.initTransferMyAccounts(transfer, acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
 ```
 
 > El POST te retornará la siguiente estructura JSON:
@@ -419,6 +479,18 @@ curl -X POST
   -H "Content-Type: application/x-www-form-urlencoded" 
   -d 'uid=34FGH67J90KLLL0' 
   "https://developers.bantotal.com/api/v1/confirmTransferMyAccounts"
+```
+
+```javascript
+const confirm = {
+  uid: 'FKD45ANV56'
+}
+
+BantotalDevelopers.confirmTransferMyAccounts(confirm, acceess_token)
+    .then(result) {
+        // Your code
+    }
+    .catch(err) console.log('Error')
 ```
 
 > El POST te retornará la siguiente estructura JSON:
